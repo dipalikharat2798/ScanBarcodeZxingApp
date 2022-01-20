@@ -43,12 +43,16 @@ class MainActivity : AppCompatActivity() {
 
         // adding listener to the button
         binding.scanBtn.setOnClickListener(listener)
+        binding.scanPortraitBtn.setOnClickListener(listener)
     }
 
     val listener = View.OnClickListener { view ->
         when (view.getId()) {
             R.id.scanBtn -> {
                 scan()
+            }
+            R.id.scanPortraitBtn -> {
+                scanPortraitScanner()
             }
         }
     }
@@ -62,4 +66,10 @@ class MainActivity : AppCompatActivity() {
         barcodeLauncher.launch(options)
     }
 
+    fun scanPortraitScanner() {
+        val options = ScanOptions()
+        options.setOrientationLocked(false)
+        options.captureActivity = PortraitCaptureActivity::class.java
+        barcodeLauncher.launch(options)
+    }
 }
