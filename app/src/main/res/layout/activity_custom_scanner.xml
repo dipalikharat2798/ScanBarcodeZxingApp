@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ae9d96"
-    android:orientation="vertical">
+    tools:context=".CustomScannerActivity">
 
     <com.journeyapps.barcodescanner.DecoratedBarcodeView
         android:id="@+id/zxing_barcode_scanner"
@@ -20,14 +19,18 @@
         android:layout_marginRight="50dp"
         android:layout_marginBottom="150dp"
         app:zxing_preview_scaling_strategy="fitXY"
-        app:zxing_use_texture_view="false" />
-<!--    <Button-->
-<!--        android:id="@+id/switch_flashlight"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Turn on Flash"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:onClick="switchFlashlight"/>-->
+        app:zxing_use_texture_view="false"
+        app:zxing_scanner_layout="@layout/custom_barcode_scanner">
+    </com.journeyapps.barcodescanner.DecoratedBarcodeView>
+
+    <Button
+        android:id="@+id/switch_flashlight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Turn on Flash"
+        android:layout_margin="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="switchFlashlight"/>
 
 </RelativeLayout>

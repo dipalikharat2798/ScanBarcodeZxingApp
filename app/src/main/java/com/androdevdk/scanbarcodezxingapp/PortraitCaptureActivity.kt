@@ -1,5 +1,6 @@
 package com.androdevdk.scanbarcodezxingapp
 
+import android.content.pm.PackageManager
 import android.view.View
 import com.journeyapps.barcodescanner.CaptureActivity
 import com.journeyapps.barcodescanner.DecoratedBarcodeView
